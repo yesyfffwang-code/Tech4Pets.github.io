@@ -1,0 +1,409 @@
+{\rtf1\ansi\ansicpg936\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww28600\viewh14460\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+  <meta charset="UTF-8" />\
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\
+  <title>Tech4Pets - Condition 1</title>\
+  <style>\
+    :root \{\
+      --bg: #f7f7f5;\
+      --surface: #ffffff;\
+      --text: #2d3748;\
+      --muted: #6b7280;\
+      --line: #e8e8e5;\
+      --accent: #e67d32;\
+      --accent-dark: #cf6922;\
+      --card: #f4efe7;\
+      --shadow: 0 8px 24px rgba(17, 24, 39, 0.06);\
+      --radius: 18px;\
+    \}\
+\
+    * \{\
+      box-sizing: border-box;\
+    \}\
+\
+    body \{\
+      margin: 0;\
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;\
+      background: var(--bg);\
+      color: var(--text);\
+    \}\
+\
+    a \{\
+      color: inherit;\
+      text-decoration: none;\
+    \}\
+\
+    .container \{\
+      width: min(1120px, calc(100% - 48px));\
+      margin: 0 auto;\
+    \}\
+\
+    header \{\
+      background: rgba(255, 255, 255, 0.85);\
+      border-bottom: 1px solid var(--line);\
+      position: sticky;\
+      top: 0;\
+      z-index: 10;\
+      backdrop-filter: blur(8px);\
+    \}\
+\
+    .nav \{\
+      display: flex;\
+      align-items: center;\
+      justify-content: space-between;\
+      height: 78px;\
+    \}\
+\
+    .brand \{\
+      display: flex;\
+      align-items: center;\
+      gap: 12px;\
+      font-weight: 800;\
+      font-size: 18px;\
+      letter-spacing: -0.02em;\
+    \}\
+\
+    .brand-mark \{\
+      font-size: 28px;\
+      line-height: 1;\
+    \}\
+\
+    nav ul \{\
+      list-style: none;\
+      display: flex;\
+      gap: 34px;\
+      margin: 0;\
+      padding: 0;\
+      color: #5f6673;\
+      font-size: 15px;\
+    \}\
+\
+    .hero \{\
+      padding: 64px 0 28px;\
+      text-align: center;\
+    \}\
+\
+    .hero h1 \{\
+      margin: 0;\
+      font-size: clamp(38px, 5vw, 58px);\
+      line-height: 1.12;\
+      letter-spacing: -0.035em;\
+      font-weight: 800;\
+      max-width: 760px;\
+      margin-inline: auto;\
+    \}\
+\
+    .hero p \{\
+      margin: 18px auto 0;\
+      color: var(--muted);\
+      font-size: 20px;\
+      max-width: 650px;\
+    \}\
+\
+    .newsletter-wrap \{\
+      padding: 26px 0 34px;\
+    \}\
+\
+    .newsletter \{\
+      width: min(760px, 100%);\
+      margin: 0 auto;\
+      background: var(--surface);\
+      border: 1px solid var(--line);\
+      border-radius: var(--radius);\
+      box-shadow: var(--shadow);\
+      padding: 30px 28px;\
+      text-align: center;\
+    \}\
+\
+    .newsletter h2 \{\
+      margin: 0 0 18px;\
+      font-size: 30px;\
+      letter-spacing: -0.03em;\
+    \}\
+\
+    .subscribe-row \{\
+      display: flex;\
+      justify-content: center;\
+      gap: 0;\
+      max-width: 520px;\
+      margin: 0 auto;\
+      overflow: hidden;\
+      border-radius: 12px;\
+      border: 1px solid #d9d9d6;\
+      background: #fff;\
+    \}\
+\
+    .subscribe-row input \{\
+      flex: 1;\
+      min-width: 0;\
+      border: 0;\
+      padding: 16px 18px;\
+      font-size: 16px;\
+      outline: none;\
+    \}\
+\
+    .subscribe-row button \{\
+      border: 0;\
+      background: var(--accent);\
+      color: white;\
+      padding: 0 26px;\
+      font-size: 16px;\
+      font-weight: 700;\
+      cursor: pointer;\
+      transition: background 0.2s ease;\
+    \}\
+\
+    .subscribe-row button:hover \{\
+      background: var(--accent-dark);\
+    \}\
+\
+    .section-divider \{\
+      display: flex;\
+      align-items: center;\
+      gap: 16px;\
+      margin: 26px auto 22px;\
+      max-width: 840px;\
+    \}\
+\
+    .section-divider::before,\
+    .section-divider::after \{\
+      content: "";\
+      height: 1px;\
+      background: #dddcd7;\
+      flex: 1;\
+    \}\
+\
+    .section-divider h3 \{\
+      margin: 0;\
+      font-size: 22px;\
+      letter-spacing: -0.02em;\
+    \}\
+\
+    .cards \{\
+      display: grid;\
+      grid-template-columns: repeat(3, 1fr);\
+      gap: 22px;\
+      padding-bottom: 72px;\
+    \}\
+\
+    .card \{\
+      background: var(--surface);\
+      border: 1px solid var(--line);\
+      border-radius: 16px;\
+      overflow: hidden;\
+      box-shadow: 0 6px 18px rgba(17, 24, 39, 0.04);\
+    \}\
+\
+    .card-visual \{\
+      position: relative;\
+      height: 196px;\
+      overflow: hidden;\
+    \}\
+\
+    .card-visual img \{\
+      width: 100%;\
+      height: 100%;\
+      object-fit: cover;\
+      display: block;\
+    \}\
+\
+    /* Overlay mask on each recommended-read image */\
+    .card-visual::after \{\
+      content: "";\
+      position: absolute;\
+      inset: 0;\
+      background: rgba(0, 0, 0, 0.22);\
+      pointer-events: none;\
+    \}\
+\
+    /* White strip for text contrast */\
+    .card-body \{\
+      position: relative;\
+      background: white;\
+      padding: 16px 16px 18px;\
+      margin-top: -8px;\
+      border-top-left-radius: 12px;\
+      border-top-right-radius: 12px;\
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.03);\
+    \}\
+\
+    .card-body \{\
+      padding: 16px 16px 18px;\
+    \}\
+\
+    .card h4 \{\
+      margin: 0 0 10px;\
+      font-size: 22px;\
+      line-height: 1.25;\
+      letter-spacing: -0.02em;\
+    \}\
+\
+    .card p \{\
+      margin: 0;\
+      color: var(--muted);\
+      font-size: 16px;\
+      line-height: 1.5;\
+    \}\
+\
+    footer \{\
+      border-top: 1px solid var(--line);\
+      color: var(--muted);\
+      font-size: 14px;\
+      padding: 22px 0 36px;\
+      text-align: center;\
+    \}\
+\
+    @media (max-width: 900px) \{\
+      .cards \{\
+        grid-template-columns: 1fr;\
+      \}\
+\
+      nav ul \{\
+        gap: 18px;\
+        font-size: 14px;\
+      \}\
+\
+      .newsletter h2 \{\
+        font-size: 24px;\
+      \}\
+    \}\
+\
+    @media (max-width: 640px) \{\
+      .container \{\
+        width: min(100% - 28px, 1120px);\
+      \}\
+\
+      .nav \{\
+        height: auto;\
+        padding: 16px 0;\
+        flex-direction: column;\
+        gap: 14px;\
+      \}\
+\
+      nav ul \{\
+        flex-wrap: wrap;\
+        justify-content: center;\
+      \}\
+\
+      .hero \{\
+        padding-top: 42px;\
+      \}\
+\
+      .hero h1 \{\
+        font-size: 34px;\
+      \}\
+\
+      .hero p \{\
+        font-size: 18px;\
+      \}\
+\
+      .newsletter \{\
+        padding: 22px 16px;\
+      \}\
+\
+      .subscribe-row \{\
+        flex-direction: column;\
+        border: 0;\
+        background: transparent;\
+        gap: 10px;\
+      \}\
+\
+      .subscribe-row input,\
+      .subscribe-row button \{\
+        border-radius: 12px;\
+        border: 1px solid #d9d9d6;\
+        min-height: 52px;\
+      \}\
+\
+      .subscribe-row button \{\
+        padding: 12px 18px;\
+      \}\
+    \}\
+  </style>\
+</head>\
+<body>\
+  <header>\
+    <div class="container nav">\
+      <a href="#" class="brand" aria-label="Tech4Pets home">\
+        <span class="brand-mark">\uc0\u55357 \u56382 </span>\
+        <span>Tech4Pets</span>\
+      </a>\
+      <nav aria-label="Primary navigation">\
+        <ul>\
+          <li><a href="#">Home</a></li>\
+          <li><a href="#reads">Popular</a></li>\
+          <li><a href="#reads">Latest</a></li>\
+          <li><a href="#community">About / Join Our Community</a></li>\
+        </ul>\
+      </nav>\
+    </div>\
+  </header>\
+\
+  <main>\
+    <section class="hero">\
+      <div class="container">\
+        <h1>Helping Your Best Friend Live Their Happiest Life.</h1>\
+        <p>Exploring the latest pet technology trends and tips.</p>\
+      </div>\
+    </section>\
+\
+    <section class="newsletter-wrap" id="community">\
+      <div class="container">\
+        <div class="newsletter">\
+          <h2>Join a community that truly cares for your dog.</h2>\
+          <p style="margin:0 0 18px;color:var(--muted);font-size:16px;">Get simple tips, supportive guidance, and weekly insights to help your dog live a happier, healthier life.</p>\
+          <form class="subscribe-row" onsubmit="event.preventDefault(); alert('Thanks for joining Tech4Pets!');">\
+            <input type="email" placeholder="Enter your email" aria-label="Email address" required />\
+            <button type="submit">Unlock Their Potential</button>\
+          </form>\
+        </div>\
+      </div>\
+    </section>\
+\
+<section id="reads" class="container">\
+      <div class="section-divider">\
+        <h3>Recommended Reads for You</h3>\
+      </div>\
+\
+      <div class="cards">\
+        <article class="card">\
+          <div class="card-visual"><img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?q=80&w=800" alt="Dog wearing smart collar" style="width:100%;height:100%;object-fit:cover;"/></div>\
+          <div class="card-body">\
+            <h4>Top Smart Collars for Your Dog</h4>\
+            <p>The best trackers to keep your pup safe &amp; healthy</p>\
+          </div>\
+        </article>\
+\
+        <article class="card">\
+          <div class="card-visual"><img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=800" alt="Cat playing with toy" style="width:100%;height:100%;object-fit:cover;"/></div>\
+          <div class="card-body">\
+            <h4>Best Interactive Toys for Cats</h4>\
+            <p>Engage your feline friend with fun tech toys</p>\
+          </div>\
+        </article>\
+\
+        <article class="card">\
+          <div class="card-visual"><img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=800" alt="Online pet telehealth consultation" style="width:100%;height:100%;object-fit:cover;"/></div>\
+          <div class="card-body">\
+            <h4>How to Use Pet Telehealth Services</h4>\
+            <p>A guide to online vet consultations</p>\
+          </div>\
+        </article>\
+      </div>\
+    </section>\
+  </main>\
+\
+  <footer>\
+    <div class="container">Tech4Pets experimental mockup \'97 Condition 1: Static Placement \'d7 Supportive Tone</div>\
+  </footer>\
+</body>\
+</html>\
+}
